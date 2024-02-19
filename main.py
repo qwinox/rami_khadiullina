@@ -84,12 +84,11 @@ with st.expander('Расчёты'):
         # Отображение графика
         st.pyplot(plt)
             
-    with st.expander(' бетона на сжатие'):
-        col1, col2 = st.columns([1,3])
-        with col1:
-            # Вывод таблицы
-            st.write("Таблица деформирования бетона на сжатие:")
-            st.write(df_0)
-        with col2:
-            # Отображение графика
-            st.pyplot(plt)
+    col1, col2 = st.columns([1,3])
+    with col1:
+        # Вывод таблицы
+        st.write("Таблица деформирования бетона на сжатие:")
+        st.write(df_0)
+    with col2:
+        # Отображение графика
+        st.pyplot(plt)
