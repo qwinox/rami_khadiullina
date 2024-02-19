@@ -32,7 +32,7 @@ Es = 200000000
 
 as_ = 0.03
 asc = 0.03
-h0 = beam_width - 0.03
+# h0 = beam_width - 0.03
 
 q = float(input("Введите распределённую нагрузку в  т/м:").replace(',', '.'))
 l = float(input("Введите длину момента в  м:").replace(',', '.'))
