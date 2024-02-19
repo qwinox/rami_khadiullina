@@ -112,11 +112,11 @@ with st.expander('Расчёты'):
             st.write(df_0)
         with col2:
             # Разделение данных на оси x и y
-            y = [item[0] for item in data_0]
-            x = [item[1] for item in data_0]
+            y = [item[0] for item in data_1]
+            x = [item[1] for item in data_1]
             
             # Построение графика
-            plt.plot(y, x, marker='o')
+            plt.plot(x, y, marker='o')
             plt.title('Трехлинейная диаграмма деформирования бетона на сжатие')
             plt.grid(True)
             st.pyplot(plt)
