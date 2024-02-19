@@ -68,9 +68,9 @@ y = [item[0] for item in data_0]
 x = [item[1] for item in data_0]
 
 # Построение графика
-plt_0.plot(x, y, marker='o')
-plt_0.title('Трехлинейная диаграмма деформирования бетона на сжатие')
-plt_0.grid(True)
+plt_0 = plt.plot(x, y, marker='o')
+plt_0 = plt.title('Трехлинейная диаграмма деформирования бетона на сжатие')
+plt_0 = plt.grid(True)
 
 
 with st.expander('Расчёты'):
