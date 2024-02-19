@@ -7,12 +7,12 @@ import matplotlib.pyplot as plt
 st.title("Нужно придумать название сюда")
 
 beam_length = float(st.text_input("Введите длину балки в м:").replace(',', '.'))
-beam_width = float(st.text_input("Введите ширину балки в м:").replace(',', '.'))
-concrete_class = float(st.text_input("Введите класс бетона:").replace(',', '.'))
-reinforcement_class = float(st.text_input("Введите класс арматуры:").replace(',', '.'))
-as0 = str(st.text_input("Введите первый тип арматуры:"))
-as1 = str(st.text_input("Введите второй тип арматуры:"))
-n = int(st.text_input("Количество итераций:"))
+#beam_width = float(st.text_input("Введите ширину балки в м:").replace(',', '.'))
+#concrete_class = float(st.text_input("Введите класс бетона:").replace(',', '.'))
+#reinforcement_class = float(st.text_input("Введите класс арматуры:").replace(',', '.'))
+#as0 = str(st.text_input("Введите первый тип арматуры:"))
+#as1 = str(st.text_input("Введите второй тип арматуры:"))
+#n = int(st.text_input("Количество итераций:"))
 
 #
 # as0 = ((int(as0[2:]) / 2 / 1000) ** 2 * pi) * 2
