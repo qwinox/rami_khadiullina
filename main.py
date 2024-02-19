@@ -75,14 +75,17 @@ plt.grid(True)
 col1, col2 = st.columns([1,3])
 
 with st.expander('Расчёты'):
-    col1, col2 = st.columns([1,3])
-    with col1:
-        # Вывод таблицы
-        st.write("Таблица деформирования бетона на сжатие:")
-        st.write(df_0)
-    with col2:
-        # Отображение графика
-        st.pyplot(plt)
+    on1 = st.toggle('Отобразить деформирования бетона на сжатие')
+
+    if on1:
+        col1, col2 = st.columns([1,3])
+        with col1:
+            # Вывод таблицы
+            st.write("Таблица деформирования бетона на сжатие:")
+            st.write(df_0)
+        with col2:
+            # Отображение графика
+            st.pyplot(plt)
             
     col1, col2 = st.columns([1,3])
     with col1:
