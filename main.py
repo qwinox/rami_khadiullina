@@ -13,6 +13,10 @@ with st.expander('Основные показатели'):
     as0 = str(st.text_input("Введите первый тип арматуры:", "2D18"))
     as1 = str(st.text_input("Введите второй тип арматуры:", "2D14"))
     n = st.text_input("Количество итераций:", 10)
+    q = st.text_input("Введите распределённую нагрузку в  т/м:").replace(',', '.')
+    l = st.text_input("Введите длину момента в  м:").replace(',', '.')
+    # m = q * l ** 2 / 8
+    # m_ = m * 9.8
 
 with st.expander('Класс материалов'):
     options1 = ['B3,5', 'B5', 'B7,5', 'B10', 'B12,5', 'B15', 'B20', 'B25', 'B30', 'B35', 'B40', 'B45', 'B50', 'B55', 'B60', 'B70', 'B80', 'B90', 'B100']
@@ -53,12 +57,6 @@ Rsc = Rsc_list[options2.index(reinforcement_class)]
 Rsn = Rsn_list[options2.index(reinforcement_class)]
 
 Es = 195000 if reinforcement_class[0] == "K" else 200000
-
-with st.expander('Нагрузка'):
-    q = st.text_input("Введите распределённую нагрузку в  т/м:").replace(',', '.')
-    l = st.text_input("Введите длину момента в  м:").replace(',', '.')
-    # m = q * l ** 2 / 8
-    # m_ = m * 9.8
 
 # _______________________________________________________________
 # Трехлинейная диаграмма деформирования бетона на сжатие
