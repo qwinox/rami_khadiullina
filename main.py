@@ -85,6 +85,7 @@ with st.expander('Расчёты'):
     on2 = st.toggle('Отобразить бетона на сжатие')
 
     if on1:
+        plt.clf()
         col1, col2 = st.columns([1,3])
         
         with col1:
@@ -102,8 +103,9 @@ with st.expander('Расчёты'):
             st.pyplot(plt)
 
 
-
+    
     if on2:
+        plt.clf()
         col1, col2 = st.columns([1,3])
         
         with col1:
