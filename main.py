@@ -68,17 +68,30 @@ y = [item[0] for item in data_0]
 x = [item[1] for item in data_0]
 
 # Построение графика
-plt.plot(x, y, marker='o')
-plt.title('Трехлинейная диаграмма деформирования бетона на сжатие')
-plt.grid(True)
+plt_0.plot(x, y, marker='o')
+plt_0.title('Трехлинейная диаграмма деформирования бетона на сжатие')
+plt_0.grid(True)
 
-col1, col2 = st.columns([1,3])
 
 with st.expander('Расчёты'):
     on1 = st.toggle('Отобразить деформирования бетона на сжатие')
 
     if on1:
         col1, col2 = st.columns([1,3])
+        
+        with col1:
+            # Вывод таблицы
+            st.write("Таблица деформирования бетона на сжатие:")
+            st.write(df_0)
+        with col2:
+            # Отображение графика
+            st.pyplot(plt_0)
+
+    on2 = st.toggle('Отобразить деформирования бетона на сжатие')
+
+    if on2:
+        col1, col2 = st.columns([1,3])
+        
         with col1:
             # Вывод таблицы
             st.write("Таблица деформирования бетона на сжатие:")
@@ -86,12 +99,3 @@ with st.expander('Расчёты'):
         with col2:
             # Отображение графика
             st.pyplot(plt)
-            
-    col1, col2 = st.columns([1,3])
-    with col1:
-        # Вывод таблицы
-        st.write("Таблица деформирования бетона на сжатие:")
-        st.write(df_0)
-    with col2:
-        # Отображение графика
-        st.pyplot(plt)
