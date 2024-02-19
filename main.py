@@ -68,6 +68,7 @@ df_0 = pd.DataFrame(data_0, columns=['σ', 'ε'])
 
 with st.expander('Расчёты'):
     on1 = st.toggle('Отобразить деформирования бетона на сжатие')
+    on2 = st.toggle('Отобразить бетона на сжатие')
 
     if on1:
         col1, col2 = st.columns([1,3])
@@ -86,7 +87,7 @@ with st.expander('Расчёты'):
             plt.grid(True)
             st.pyplot(plt)
 
-    on2 = st.toggle('Отобразить деформирования бетона на сжатие')
+
 
     if on2:
         col1, col2 = st.columns([1,3])
