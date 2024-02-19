@@ -9,11 +9,15 @@ st.title("Нужно придумать название сюда")
 with st.expander('Основные показатели'):
     beam_length = st.text_input("Введите длину балки в м:", 0.2).replace(',', '.')
     beam_width = st.text_input("Введите ширину балки в м:", 0.55).replace(',', '.')
-    concrete_class = st.text_input("Введите класс бетона:", "В15").replace('.', ',')
-    reinforcement_class = st.text_input("Введите класс арматуры:", "A400").replace(',', '.')
+    
     as0 = str(st.text_input("Введите первый тип арматуры:", "2D18"))
     as1 = str(st.text_input("Введите второй тип арматуры:", "2D14"))
     n = st.text_input("Количество итераций:", 10)
+
+with st.expander('Класс материалов'):
+    options = ['B3,5', 'B5', 'B7,5', 'B10', 'B12,5', 'B15', 'B20', 'B25', 'B30', 'B35', 'B40', 'B45', 'B50', 'B55', 'B60', 'B70', 'B80', 'B90', 'B100']
+    concrete_class = st.selectbox("Введите класс бетона:", options)
+    reinforcement_class = st.text_input("Введите класс арматуры:", "A400").replace(',', '.')
 
 as0 = ((int(as0[2:]) / 2 / 1000) ** 2 * pi) * 2
 as1 = ((int(as1[2:]) / 2 / 1000) ** 2 * pi) * 2
@@ -45,13 +49,10 @@ data_0 = [
     (0, 0),
     (Rbn * 0.6, Rbn * 0.6 / Eb),
     (11000, 0.002),
-    (11000, 0.0035)
-]
+    (11000, 0.0035)]
 
 # Создание DataFrame
 df_0 = pd.DataFrame(data_0, columns=['σ', 'ε'])
-
-
 
 # Разделение данных на оси x и y
 y = [item[0] for item in data_0]
@@ -66,7 +67,7 @@ col1, col2 = st.columns([1,3])
 
 with col1:
     # Вывод таблицы
-    st.write("Таблица деформирования бетона на сжатие")
+    st.write("Таблица деформирования бетона на сжатие:")
     st.write(df_0)
 with col2:
     # Отображение графика
