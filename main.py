@@ -4,10 +4,8 @@ from math import pi
 import pandas as pd
 import matplotlib.pyplot as plt
 
-st.title("Модель предсказания возможности получения займа в банке")
+st.title("Нужно придумать название сюда")
 
-
-st.text_input("Какой у Вас месячный доход в рублях?", "Нужно ввести количестов")
 beam_length = float(st.text_input("Введите длину балки в м:").replace(',', '.'))
 # beam_width = float(input("Введите ширину балки в м:").replace(',', '.'))
 # concrete_class = float(input("Введите класс бетона:").replace(',', '.'))
