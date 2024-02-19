@@ -24,6 +24,10 @@ with st.expander('Класс материалов'):
 as0 = ((int(as0[2:]) / 2 / 1000) ** 2 * pi) * 2
 as1 = ((int(as1[2:]) / 2 / 1000) ** 2 * pi) * 2
 
+as_ = 0.03
+asc = 0.03
+# h0 = beam_width - 0.03
+
 Rb_list = [2100, 2800, 4500, 6000, 7500, 8500, 11500, 14500, 17000, 19500, 22000, 25000, 27500, 30000, 33000, 37000, 41000, 44000, 47500]
 Rbn_list = [2700, 3500, 5500, 7500, 9500, 11000, 15000, 18500, 22000, 25500, 29000, 32000, 36000, 39500, 43000, 50000, 57000, 64000, 71000]
 
@@ -35,22 +39,20 @@ Eb_list = [9500000, 13000000, 16000000, 19000000, 21500000, 24000000, 27500000, 
 Rb = Rb_list[options1.index(concrete_class)]
 Rbn = Rbn_list[options1.index(concrete_class)]
 
-
 Rbt = Rbt_list[options1.index(concrete_class)]
 Rbtn = Rbtn_list[options1.index(concrete_class)]
 
 Eb = Eb_list[options1.index(concrete_class)]
 
-Rs = 355000
-Rsn = 400000
-Rsc = 355000
+Rs_list = [210000, 340000, 435000, 520000, 695000, 870000, 415000, 415000, 1000000, 1100000, 1170000, 1250000, 1340000, 1170000, 1200000, 1250000, 1350000, 1435000, 1515000, 1600000, 1670000]
+Rsc_list = [210000, 340000, 435000, 470000, 500000, 500000, 415000, 390000, 500000, 500000, 500000, 500000, 500000, 500000, 500000, 500000, 500000, 500000, 500000, 500000, 500000]
+Rsn_list = [240000, 390000, 500000, 600000, 800000, 1000000, 500000, 500000, 1200000, 1300000, 1400000, 1500000, 1600000, 1400000, 1450000, 1500000, 1550000, 1650000, 1740000, 1840000, 1920000]
 
+Rs = Rs_list[options2.index(reinforcement_class)]
+Rsc = Rsc_list[options2.index(reinforcement_class)]
+Rsn = Rsn_list[options2.index(reinforcement_class)]
 
-Es = 200000000
-
-as_ = 0.03
-asc = 0.03
-# h0 = beam_width - 0.03
+Es = 195000 if reinforcement_class[0] == "K" else 200000
 
 with st.expander('Нагрузка'):
     q = st.text_input("Введите распределённую нагрузку в  т/м:").replace(',', '.')
@@ -143,5 +145,45 @@ with st.expander('Расчёты'):
             # Построение графика
             plt.plot(x, y, marker='o')
             st.write('Трехлинейная диаграмма деформирования бетона на растяжение')
+            plt.grid(True)
+            st.pyplot(plt)
+
+    on3 = st.toggle('Отобразить деформирования арматуры на сжатие')
+    
+    if on3:
+        plt.clf()
+        col1, col2 = st.columns([1,3])
+        
+        with col1:
+            st.write("Таблица деформирования арматуры на сжатие:")
+            st.write(df_2)
+        with col2:
+            # Разделение данных на оси x и y
+            y = [item[0] for item in data_2]
+            x = [item[1] for item in data_2]
+            
+            # Построение графика
+            plt.plot(x, y, marker='o')
+            st.write('Трехлинейная диаграмма деформирования бетона на сжатие')
+            plt.grid(True)
+            st.pyplot(plt)
+
+    on4 = st.toggle('Отобразить деформирования арматуры на растяжение')
+    
+    if on4:
+        plt.clf()
+        col1, col2 = st.columns([1,3])
+        
+        with col1:
+            st.write("Таблица деформирования арматуры на сжатие:")
+            st.write(df_3)
+        with col2:
+            # Разделение данных на оси x и y
+            y = [item[0] for item in data_3]
+            x = [item[1] for item in data_3]
+            
+            # Построение графика
+            plt.plot(x, y, marker='o')
+            st.write('Трехлинейная диаграмма деформирования бетона на сжатие')
             plt.grid(True)
             st.pyplot(plt)
