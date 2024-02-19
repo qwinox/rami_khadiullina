@@ -51,9 +51,7 @@ data_0 = [
 # Создание DataFrame
 df_0 = pd.DataFrame(data_0, columns=['σ', 'ε'])
 
-# Вывод таблицы
-st.write("Деформирования бетона на сжатие")
-st.write(df_0)
+
 
 # Разделение данных на оси x и y
 y = [item[0] for item in data_0]
@@ -64,5 +62,12 @@ plt.plot(x, y, marker='o')
 plt.title('Трехлинейная диаграмма деформирования бетона на сжатие')
 plt.grid(True)
 
-# Отображение графика
-st.pyplot(plt)
+col1, col2 = st.columns([1,3])
+
+with col1:
+    # Вывод таблицы
+    st.write("Деформирования бетона на сжатие")
+    st.write(df_0)
+with col2:
+    # Отображение графика
+    st.pyplot(plt)
