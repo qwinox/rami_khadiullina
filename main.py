@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 st.title("Нужно придумать название сюда")
 
-beam_length = float(st.text_input("Введите длину балки в м:").replace(',', '.'))
+beam_length = st.text_input("Введите длину балки в м:").replace(',', '.')
 #beam_width = float(st.text_input("Введите ширину балки в м:").replace(',', '.'))
 #concrete_class = float(st.text_input("Введите класс бетона:").replace(',', '.'))
 #reinforcement_class = float(st.text_input("Введите класс арматуры:").replace(',', '.'))
