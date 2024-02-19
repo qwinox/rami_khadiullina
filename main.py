@@ -111,7 +111,7 @@ with st.expander('Расчёты'):
     
     if on1:
         plt.clf()
-        col1, col2 = st.columns([1,3])
+        col1, col2 = st.columns([1,2])
         
         with col1:
             st.write("Таблица деформирования бетона на сжатие:")
@@ -131,7 +131,7 @@ with st.expander('Расчёты'):
     
     if on2:
         plt.clf()
-        col1, col2 = st.columns([1,3])
+        col1, col2 = st.columns([1,2])
         
         with col1:
             # Вывод таблицы
