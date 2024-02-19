@@ -82,8 +82,7 @@ df_1 = pd.DataFrame(data_1, columns=['σ', 'ε'])
 
 with st.expander('Расчёты'):
     on1 = st.toggle('Отобразить деформирования бетона на сжатие')
-    on2 = st.toggle('Отобразить бетона на сжатие')
-
+    
     if on1:
         plt.clf()
         col1, col2 = st.columns([1,3])
@@ -102,7 +101,7 @@ with st.expander('Расчёты'):
             plt.grid(True)
             st.pyplot(plt)
 
-
+    on2 = st.toggle('Отобразить бетона на сжатие')
     
     if on2:
         plt.clf()
@@ -110,8 +109,8 @@ with st.expander('Расчёты'):
         
         with col1:
             # Вывод таблицы
-            st.write("Таблица бетона на сжатие:")
-            st.write(df_0)
+            st.write("Таблица деформирования бетона на растяжение:")
+            st.write(df_1)
         with col2:
             # Разделение данных на оси x и y
             y = [item[0] for item in data_1]
@@ -119,6 +118,6 @@ with st.expander('Расчёты'):
             
             # Построение графика
             plt.plot(x, y, marker='o')
-            plt.title('Трехлинейная диаграмма деформирования бетона на сжатие')
+            plt.title('Трехлинейная диаграмма деформирования бетона на растяжение')
             plt.grid(True)
             st.pyplot(plt)
