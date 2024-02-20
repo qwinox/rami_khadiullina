@@ -135,8 +135,10 @@ with st.expander('Расчёты'):
         with col1:
             # Вывод таблицы
             st.write("Таблица деформирования бетона на растяжение:")
+            pd.set_option('display.float_format', lambda x: '%.5f' % x)
             st.write(df_1)
             st.dataframe(df_1.applymap(lambda x: round(x, 6)))
+            st.dataframe(df_1)
         with col2:
             # Разделение данных на оси x и y
             y = [item[0] for item in data_1]
