@@ -114,7 +114,6 @@ with st.expander('Расчёты'):
         
         with col1:
             st.write("Таблица деформирования бетона на сжатие:")
-            st.dataframe(df_0.applymap(lambda x: round(x, 6)))
             st.write(df_0)
         with col2:
             # Разделение данных на оси x и y
@@ -137,6 +136,7 @@ with st.expander('Расчёты'):
             # Вывод таблицы
             st.write("Таблица деформирования бетона на растяжение:")
             st.write(df_1)
+            st.dataframe(df_1.applymap(lambda x: round(x, 6)))
         with col2:
             # Разделение данных на оси x и y
             y = [item[0] for item in data_1]
