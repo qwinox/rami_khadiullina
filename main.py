@@ -76,7 +76,7 @@ df_0 = df_0.round(6)
 temp_1 = Rbt * 0.6 / Eb
 if temp_1 < 0.0001:
     temp_1 = str(temp_1)
-    temp_1 = temp_1[:4] + temp_1[-4:] 
+    temp_1 = temp_1[:3] + temp_1[-4:] 
 data_1 = [
     (0, 0),
     (Rbt * 0.6, temp_1),
