@@ -72,9 +72,14 @@ df_0 = df_0.round(6)
 
 # _______________________________________________________________
 # Трехлинейная диаграмма деформирования бетона на растяжение
+
+temp_1 = Rbt * 0.6 / Eb
+if temp < 0.00001:
+    temp = str(temp)
+    temp = temp[:4] + temp[-4:] 
 data_1 = [
     (0, 0),
-    (Rbt * 0.6, str(Rbt * 0.6 / Eb)),
+    (Rbt * 0.6, temp),
     (Rbtn, 0.0001),
     (Rbtn, 0.00015)
 ]
@@ -135,9 +140,6 @@ with st.expander('Расчёты'):
         with col1:
             # Вывод таблицы
             st.write("Таблица деформирования бетона на растяжение:")
-            pd.set_option('display.float_format', lambda x: '%s' % x)
-            st.write(df_1)
-            st.dataframe(df_1.applymap(lambda x: round(x, 6)))
             st.dataframe(df_1)
         with col2:
             # Разделение данных на оси x и y
