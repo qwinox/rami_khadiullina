@@ -135,7 +135,7 @@ with st.expander('Расчёты'):
         with col1:
             # Вывод таблицы
             st.write("Таблица деформирования бетона на растяжение:")
-            pd.set_option('display.float_format', lambda x: '%.5f' % x)
+            pd.set_option('display.float_format', lambda x: '%s' % x)
             st.write(df_1)
             st.dataframe(df_1.applymap(lambda x: round(x, 6)))
             st.dataframe(df_1)
